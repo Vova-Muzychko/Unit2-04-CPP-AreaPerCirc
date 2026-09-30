@@ -4,27 +4,24 @@
 // calculates the area and perimeter of a circle
 #include <iostream>
 #include <cmath>
-#include <iomanip>  // Needed for std::fixed and std::setprecision
+#include <iomanip>
 
 int main() {
     double radius = 0.0;
 
-    std::cout << "Enter the radius of the circle: ";
-    if (!(std::cin >> radius)) {
-        std::cout << "Invalid input! Please enter a numerical "
-                 "value." << std::endl;
-        return 1;
-    }
+    // Get input from the user
+    std::cout << "Enter the radius of the circle (in cm): ";
+    std::cin >> radius;
 
+    // Calculations using M_PI
     double area = M_PI * std::pow(radius, 2);
-    double perimeter = 2 * M_PI * radius;
+    double circumference = 2 * M_PI * radius;
 
-    // Set output formatting to fixed-point with 2 decimal places
+    // Display results formatted to 2 decimal places with cm units
     std::cout << std::fixed << std::setprecision(2);
-
-    std::cout << "\nFor a circle with radius " << radius << ":" << std::endl;
-    std::cout << "Area = " << area << std::endl;
-    std::cout << "Perimeter (Circumference) = " << perimeter << std::endl;
+    std::cout << "\nRadius: " << radius << " cm" << std::endl;
+    std::cout << "Area: " << area << " cm²" << std::endl;
+    std::cout << "Circumference: " << circumference << " cm" << std::endl;
 
     return 0;
 }
